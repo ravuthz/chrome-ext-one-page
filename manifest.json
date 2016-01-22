@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "One Page",
+    "short_name": "one_page",
+    "description": "",
+    "version": "0.0.1",
+    "minimum_chrome_version": "38",
+
+    "icons": {
+        "16": "assets/img/icon_16.png",
+        "128": "assets/img/icon_128.png"
+    },
+
+    "background": {
+        "persistent": false,
+        "scripts": [
+            "assets/js/background.js"
+        ]
+    },
+
+    "browser_action": {
+        "default_icon": "assets/img/icon_16.png",
+        "default_title": "OnePage",
+        "default_title": "OnePageExt"
+    },
+
+    "permissions": [
+        "tabs"
+    ],
+    "content_security_policy": "object-src 'self'; script-src https://*.firebaseio.com"
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>one_page</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/firebase.js"></script>
+    <script src="assets/js/angularfire.min.js"></script>
+    <script src="assets/js/ui-bootstrap-tpls-1.1.0.min.js"></script>
+</head>
+
+<body ng-app="onepage">
+    <div class="container" ng-controller="MainCtrl">
+        <div class="page-header">
+            <h1>
+            One Page
+            <small>Collect all tabs in current window</small>
+            </h1>
+            <button class="btn btn-sm" ng-click="action = 'delete'">Delete</button>
+            <button ng-show="action" class="btn btn-sm" ng-click="action = ''">Cancel</button>
+        </div>
+        <uib-tabset>
+            <uib-tab ng-repeat="page in pages" heading="{{page.tabs.length}}">
+                <h3>{{ page.date | date }}</h3>
+                <div class="list-group">
+                    <a ng-repeat="tab in page.tabs" href="" ng-click="eClick(tab)" class="list-group-item">
+                        <i ng-show="action" class="glyphicon glyphicon-minus-sign">&nbsp;</i>
+                        <img ng-src="{{tab.url | logo}}" />
+                        &nbsp;&nbsp;&nbsp;
+                        {{tab.title}}
+                    </a>
+                </div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    <script src="assets/js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
