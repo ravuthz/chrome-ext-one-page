@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "One Page",
     "short_name": "one_page",
-    "description": "",
+    "description": "Chrome Extenion - One Page",
     "version": "0.0.1",
     "minimum_chrome_version": "38",
 
